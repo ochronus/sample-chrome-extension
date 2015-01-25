@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Hacker news link tabifier",
+    "description": "Makes links on Hacker News open in new tabs",
+    "version": "1.0",
+    "browser_action": {
+    "default_icon": "icons/hacker_news-512.png"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://news.ycombinator.com/*"
+        ],
+        "js": ["lib/jquery.min.js", "src/hn_links.js"],
+        "run_at": "document_end"
+      }
+    ]
+}
